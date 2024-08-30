@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 import axios from "axios";
 import "../adduser/add.css";
 import toast from 'react-hot-toast';
+import { baseUrl } from '../Url.js';
 
 const Edit = () => {
 
@@ -24,7 +25,7 @@ const users = {
  }
 
  useEffect(()=>{
-    axios.get(`http://localhost:8000/api/getOne/${id}`)
+    axios.get(`${baseUrl}/api/getOne/${id}`)
     .then((response)=>{
          setUser(response.data);
     })
@@ -35,7 +36,7 @@ const users = {
 
  const submitForm = async(e)=>{
     e.preventDefault();
-    await axios.put(`http://localhost:8000/api/update/${id}` ,user)
+    await axios.put(`${baseUrl}/api/update/${id}` ,user)
     .then((response)=>{
         toast.success(response.data.msg, {position:"top-right"});
         navigate("/");

@@ -3,6 +3,7 @@ import axios from "axios";
 import "../getuser/User.css";
 import {Link} from 'react-router-dom';
 import toast from "react-hot-toast";
+import { baseUrl } from '../Url.js';
 
 
 export const User = () => {
@@ -11,7 +12,7 @@ export const User = () => {
 
     useEffect(()=>{
         const fetchData= async()=>{
-            const response=await axios.get("http://localhost:8000/api/getAll");
+            const response=await axios.get(`${baseUrl}/api/getAll`);
             setUsers(response.data);
         }
 
@@ -20,7 +21,7 @@ export const User = () => {
     },[])
 
     const deleteUser =async(userId)=>{
-        await axios.delete(`http://localhost:8000/api/delete/${userId}`)
+        await axios.delete(`${baseUrl}/api/delete/${userId}`)
         .then((response)=>{
            setUsers((prevUser)=> prevUser.filter((user)=> user._id !== userId));
            toast.success(response.data.msg, {position: 'top-right'});

@@ -1,0 +1,1 @@
+export const baseUrl=`https://backend-crud-6qig.onrender.com`
