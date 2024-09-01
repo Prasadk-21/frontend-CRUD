@@ -7,5 +7,10 @@
 }
 
 body{
-    background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+    background: linear-gradient(
+  to right,
+  rgba(255, 153, 51, 0.65),   /* Saffron with 65% opacity */
+  rgba(255, 255, 255, 0.65),  /* White with 65% opacity */
+  rgba(19, 136, 8, 0.65)      /* Green with 65% opacity */
+);
 }
