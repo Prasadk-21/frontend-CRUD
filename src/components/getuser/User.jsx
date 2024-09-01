@@ -32,6 +32,7 @@ export const User = () => {
     }
   return (
     <div className='userTable'>
+        <h2>Crud App</h2>
         <Link to={"/add"} className='addButton'>Add User</Link>
         <table border={1} cellPadding={10} cellSpacing={0}>
             <thead>
